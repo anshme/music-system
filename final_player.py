@@ -1,11 +1,8 @@
-import Tkinter as tk
-import Tkconstants,tkFileDialog                            # all required modules
+                           # all required modules
 import threading
 import thread
 import pygame
-from tkFileDialog import askdirectory
 from subprocess import call
-import vlc
 
 pygame.init()
 pygame.mixer.init()
@@ -16,9 +13,11 @@ file = ''   										#example
 def music(file):
 	pygame.mixer.music.load(file)
 	pygame.mixer.music.play()
-	while pygame.mixer.music.get_busy():
-		pygame.time.Clock().tick(0)
-
+	try:
+		while pygame.mixer.music.get_busy():
+			pygame.time.Clock().tick(0)
+	except:
+		print("Exception occured. Ending program")
 
 def pause():
 	print( file + " paused")
