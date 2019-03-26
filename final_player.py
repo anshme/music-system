@@ -13,7 +13,7 @@ file = ''   										#example
 def music(file):
 	pygame.mixer.music.load(file)
 	pygame.mixer.music.play()
-	try:
+	try:				#the program throws and exception at the end, it will always end with this exception
 		while pygame.mixer.music.get_busy():
 			pygame.time.Clock().tick(0)
 	except:
