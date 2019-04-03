@@ -14,10 +14,8 @@ song_length = list()
 fhand = open('list.txt')
 for line in fhand:
 	attribute = line.split("|")
-	song_length.append(attribute[1])
 	song_name.append(attribute[0])
-	#song_length = float(attr[-1])
-	#print(song_length)
+	song_length.append(attribute[1])
 fhand.close()
 
 print(song_name)
